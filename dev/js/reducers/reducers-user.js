@@ -1,9 +1,17 @@
-/*
- * The users reducer will always return an array of users no matter what
- * You need to return something, so if there are no users then just return an empty array
- * */
-
-export default function () {
+export default function (state , action) {
+    switch (action.type)
+    {
+        case "LOGIN_SUCCESS" :
+            return{
+             items :action.user
+            }
+        case "LOGIN_FAILURE":
+            return {
+                error:action.error
+            }
+    }
+}
+/*export default function () {
     return [
         {
             id: 1,
@@ -30,4 +38,4 @@ export default function () {
             thumbnail: "http://i.imgur.com/4EMtxHB.png"
         }
     ]
-}
+}*/
